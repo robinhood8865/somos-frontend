@@ -1,0 +1,44 @@
+var variable;
+
+
+$('.why-box').eq(1 - 1).addClass('active');
+
+$('.home-faq-item').eq(1 - 1).addClass('active');
+
+$('.why-trigger-box').on('click',function() {
+  if ($(this).parents('.why-box').prev('.why-box').hasClass('no-border')) {
+    variable = false;
+  } else {
+    variable = true;
+  }
+  $('.why-box').removeClass('no-border');
+  if (variable) {
+    $(this).parents('.why-box').prev('.why-box').addClass('no-border');
+  } else {
+    $(this).parents('.why-box').prev('.why-box').removeClass('no-border');
+  }
+  $(this).parents('.why-box').siblings('.why-box').removeClass('active');
+  $(this).parents('.why-box').toggleClass('active');
+});
+
+$('.home-faq-trigger').on('click',function() {
+  if ($(this).parents('.home-faq-item').prev('.home-faq-item').hasClass('no-border')) {
+    variable = false;
+  } else {
+    variable = true;
+  }
+  $('.home-faq-item').removeClass('no-border');
+  if (variable) {
+    $(this).parents('.home-faq-item').prev('.home-faq-item').addClass('no-border');
+  } else {
+    $(this).parents('.home-faq-item').prev('.home-faq-item').removeClass('no-border');
+  }
+  $(this).parents('.home-faq-item').siblings('.home-faq-item').removeClass('active');
+  $(this).parents('.home-faq-item').toggleClass('active');
+});
+
+$('.home-faq-images-item').eq(1 - 1).addClass('active');
+$('.home-faq-item').on('click',function() {
+  $('.home-faq-images-item').removeClass('active');
+  $('.home-faq-images-item').eq($(this).index() + 1 - 1).addClass('active');
+});

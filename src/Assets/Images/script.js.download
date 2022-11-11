@@ -1,0 +1,106 @@
+var pageTitle = document.title;
+pageTitle = pageTitle.replace(" | Prodezk", "");
+if (pageTitle != "Services") {
+  localStorage.setItem("title", pageTitle);
+  console.log(pageTitle);
+}
+
+Weglot.initialize({
+  api_key: "wg_5d6d57d3365bac92beaab277a1cc32840"
+});
+
+var firstLoad = 0;
+// on Weglot init
+Weglot.on("initialized", () => {
+  // get the current active language
+  const currentLang = Weglot.getCurrentLang();
+  // call updateDropdownLinks function
+  updateSW7DropdownLinks(currentLang);
+
+  if (currentLang == "es" && firstLoad == 0) {
+    $("[title='en']").parent().parent().hide();
+    $(".en-only").hide();
+  }
+  if (currentLang == "en" && firstLoad == 0) {
+    $("[title='es']").parent().parent().hide();
+    $(".es-only").hide();
+  }
+});
+
+// for each of the .wg-element-wrapper language links
+document.querySelectorAll(".wg-element-wrapper.sw7 [lang]").forEach((link) => {
+  // add a click event listener
+  link.addEventListener("click", function (e) {
+    // prevent default
+    e.preventDefault();
+    $(".small-h1").removeClass("translated");
+    // switch to the current active language
+    Weglot.switchTo(this.getAttribute("lang"));
+    // call updateDropdownLinks function
+    updateSW7DropdownLinks(this.getAttribute("lang"));
+    console.log(this.getAttribute("lang"));
+    if (this.getAttribute("lang") == "en") {
+      $("[title='en']").parent().parent().hide();
+      $(".en-only").hide();
+      $("[title='es']").parent().parent().show();
+      $(".es-only").show();
+    }
+    if (this.getAttribute("lang") == "es") {
+      $("[title='es']").parent().parent().hide();
+      $(".es-only").hide();
+      $("[title='en']").parent().parent().show();
+      $(".en-only").show();
+    }
+  });
+});
+
+// updateDropdownLinks function
+function updateSW7DropdownLinks(currentLang) {
+  // get the wrapper element
+  const $wrapper = document.querySelector(".wg-element-wrapper.sw7");
+  // if the .w-dropdown-toggle is not the current active language
+  if (
+    $wrapper.querySelector(".w-dropdown-toggle").getAttribute("lang") !==
+    currentLang
+  ) {
+    // get the current active language link
+    const $activeLangLink = $wrapper.querySelector(
+      "[lang=" + currentLang + "]"
+    );
+
+    const childDiv = $activeLangLink.innerHTML;
+    const $toggle = $wrapper.querySelector(".w-dropdown-toggle");
+    const toggleDiv = $toggle.innerHTML;
+    $toggle.innerHTML = childDiv;
+    $activeLangLink.innerHTML = toggleDiv;
+
+    // swap the dropdown toggle's lang attr with the current active language link lang attr
+    const lang = $activeLangLink.getAttribute("lang");
+    const toggleLang = $toggle.getAttribute("lang");
+    $toggle.setAttribute("lang", lang);
+    $activeLangLink.setAttribute("lang", toggleLang);
+
+    /* // swap the dropdown toggle's text with the current active language link text
+    const $toggle = $activeLangLink
+      .closest(".wg-element-wrapper")
+      .querySelector(".w-dropdown-toggle");
+    const toggleTxt = $toggle.textContent;
+    const activeLangLinkTxt = $activeLangLink.textContent;
+    $toggle.querySelector("div").textContent = activeLangLinkTxt;
+    $activeLangLink.textContent = toggleTxt;
+    const lang = $activeLangLink.getAttribute("lang");
+    const toggleLang = $toggle.getAttribute("lang");
+    $toggle.setAttribute("lang", lang);
+    $activeLangLink.setAttribute("lang", toggleLang); */
+  }
+}
+// Sent body to overflow hidden on first click of hamburger icon
+$(".menu-button.w-nav-button").on("click", function () {
+  var clicks = $(this).data("clicks");
+  if (clicks) {
+    $("body").css("overflow", "auto");
+  } else {
+    $("body").css("overflow", "hidden");
+  }
+  $(this).data("clicks", !clicks);
+});

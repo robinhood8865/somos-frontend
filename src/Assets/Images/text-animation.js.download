@@ -1,0 +1,93 @@
+Weglot.on("initialized", () => {
+  var currentLang = Weglot.getCurrentLang();
+  console.log(currentLang);
+
+  if (currentLang.toString() == "en") {
+    $(".animated-title").addClass("opacity-100");
+    // $(".small-h1").addClass("translated");
+    // Wrap every letter in a span
+    // var textWrapper = document.querySelector(".home-intro-line");
+
+    // if (textWrapper != null) {
+    //   textWrapper.innerHTML = textWrapper.textContent.replace(
+    //     /\S/g,
+    //     "<span class='letter'>$&</span>"
+    //   );
+    // }
+
+    // var textWrapper2 = document.querySelector(".home-intro-line-2");
+
+    // if (textWrapper2 != null) {
+    //   // Wrap every letter in a span
+    //   textWrapper2.innerHTML = textWrapper2.textContent.replace(
+    //     /\S/g,
+    //     "<span class='letter'>$&</span>"
+    //   );
+    // }
+
+    // var greenText = false;
+    // $(".home-intro-line-2 .letter").each(function (index) {
+    //   if ($(this).text() == "U") {
+    //     greenText = true;
+    //   }
+    //   if (greenText == true) {
+    //     $(this).addClass("blue-text");
+    //   }
+    //   if ($(this).text() == "s") {
+    //     greenText = false;
+    //   }
+    // });
+
+    // var textWrapper3 = document.querySelector(".home-intro-line-3");
+
+    // if (textWrapper3 != null) {
+    //   // Wrap every letter in a span
+    //   textWrapper3.innerHTML = textWrapper3.textContent.replace(
+    //     /\S/g,
+    //     "<span class='letter'>$&</span>"
+    //   );
+    // }
+
+    // anime.timeline({ loop: false }).add({
+    //   targets: ".home-intro-line .letter",
+    //   translateY: [80, 0],
+    //   duration: 1500,
+    //   // elasticity: 600,
+    //   delay: (el, i) => 45 * (i + 1)
+    // });
+
+    // anime.timeline({ loop: false }).add({
+    //   targets: ".home-intro-line-2 .letter",
+    //   translateY: [80, 0],
+    //   duration: 1500,
+    //   // elasticity: 600,
+    //   delay: (el, i) => 200 + 45 * (i + 1)
+    // });
+
+    // anime.timeline({ loop: false }).add({
+    //   targets: ".home-intro-line-3 .letter",
+    //   translateY: [80, 0],
+    //   duration: 1500,
+    //   // elasticity: 600,
+    //   delay: (el, i) => 400 + 45 * (i + 1)
+    // });
+
+    var textWrapper4 = document.querySelector(".animation-box h1");
+    if (textWrapper4 != null) {
+      // Wrap every letter in a span
+
+      textWrapper4.innerHTML = textWrapper4.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+    }
+
+    anime.timeline({ loop: false }).add({
+      targets: ".animation-box .letter",
+      translateY: [80, 0],
+      duration: 1500,
+      // elasticity: 600,
+      delay: (el, i) => 45 * (i + 1)
+    });
+  }
+});

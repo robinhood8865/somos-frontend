@@ -1,0 +1,48 @@
+.animation-box h1 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  overflow: hidden;
+}
+
+.animation-box h1 .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+  transform: translateY(80px);
+}
+
+.small-h1 {
+  line-height: 100%;
+}
+
+.small-h1.translated {
+  line-height: 70%;
+}
+
+.translated .home-intro-line,
+.translated .home-intro-line-2,
+.translated .home-intro-line-3 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  margin-top: -0.2em;
+  padding-right: 0.05em;
+  overflow: hidden;
+}
+
+.translated .home-intro-line .letter,
+.translated .home-intro-line-2 .letter,
+.translated .home-intro-line-3 .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+  transform: translateY(80px);
+}
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-100 {
+  opacity: 1 !important;
+}
