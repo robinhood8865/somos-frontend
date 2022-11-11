@@ -147,7 +147,7 @@ const NavBar = () => {
                 </div>
               )}
               {showLanguage && (
-                <div className="cursor-pointer flex w-[115px] h-[80px] rounded-2xl border-[1px] border-gray-300 justify-center">
+                <div className="cursor-pointer bg-white flex w-[115px] h-[80px] rounded-2xl border-[1px] border-gray-300 justify-center">
                   <div>
                     <div className="w-full h-[40px] flex items-center justify-center">
                       English
@@ -160,8 +160,8 @@ const NavBar = () => {
               )}
             </div>
             <div className="cursor-pointer w-[240px] h-full flex items-center justify-center hover:scale-105 ">
-              <div className="flex w-[230px] h-[45px] rounded-full bg-cyan-600 hover:bg-cyan-800 text-white items-center justify-center">
-                START BUSINESS
+              <div className="uppercase flex w-[230px] h-[45px] rounded-full bg-cyan-600 hover:bg-cyan-800 text-white items-center justify-center">
+                iniciar un negocio
               </div>
             </div>
           </div>
