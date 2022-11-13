@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import logo from "../../../src/Assets/Images/Logo.svg";
-import tabler_help from "../../../src/Assets/Images/tabler_help.svg";
-import tabler_account from "../../../src/Assets/Images/tabler_account.svg";
+import logo from "../../../src/Assets/Images/logo.png";
+
 import { Link } from "react-router-dom";
 import "tw-elements";
 import { useNavigate } from "react-router-dom";
@@ -14,16 +13,12 @@ const NavBar = () => {
   const [language, setLanguage] = useState("English");
 
   return (
-    <div className="w-[full] h-[70px] bg-white flex items-center justify-center">
+    <div className="w-[full] h-[70px] bg-white flex items-center justify-center text-black">
       <nav className="border-gray-200 dark:border-gray-600 dark:bg-gray-900 w-[1140px] h-full">
         <div className="h-full flex justify-between px-1 ">
           <div className="flex h-full">
             <a href="https://flowbite.com" className="flex items-center">
-              <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                className="mr-3 h-6 sm:h-9"
-                alt="Flowbite Logo"
-              />
+              <img src={logo} className="mr-3 h-10 sm:h-14" alt="Logo" />
               <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                 SOMOS
               </span>

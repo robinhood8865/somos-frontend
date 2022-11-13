@@ -22,8 +22,8 @@ import footer1 from "../../../src/Assets/Images/footer1.png";
 const Dashboard = () => {
   const navigate = useNavigate();
   return (
-    <div className="w-screen h-full">
-      <div className="w-screen h-full bg-white font-inter flex justify-center">
+    <div className="w-full h-full">
+      <div className="w-full h-full bg-white font-inter flex justify-center text-black">
         <div className="relative  w-full h-full">
           <div className="z-50 top-0 left-0 w-full fixed">
             <NavBar />
@@ -239,9 +239,101 @@ const Dashboard = () => {
         </div> */}
           <img className="w-full" src={footer} alt="" />
 
-          <div className="w-full py-[100px] bg-[#003e6a] flex justify-center">
-            <div className="relative w-[1140px]">
-              <img src={footer1} alt="" />
+          <div className="w-full py-[10px] bg-[#003e6a] flex justify-center">
+            <div className="relative w-[1140px] border-b-[1px] border-opacity-20 border-white pb-10 mb-10 opacity-80">
+              <div className="grid grid-cols-4 gap-8">
+                <div className="mt-[40px]">
+                  <a href="https://flowbite.com" className="flex items-center">
+                    <img src={logo} className="mr-3 h-10 sm:h-14" alt="Logo" />
+                    <span className="self-center text-xl font-semibold whitespace-nowrap text-white ">
+                      SOMOS
+                    </span>
+                  </a>
+
+                  <div className="flex mt-[40px]">
+                    <a className="w-[30px] cursor-pointer mr-[10px] h-[30px] bg-light-blue-400 rounded-full flex items-center justify-center ">
+                      <img
+                        src="https://uploads-ssl.webflow.com/6164810a3ab3b97d3562415c/6176c2e20b49406379833a95_Vector-1.svg"
+                        loading="lazy"
+                        width="10"
+                        alt="facebook icon"
+                        className="footer-social-icon"
+                      />
+                    </a>
+                    <a className="w-[30px] cursor-pointer mr-[10px] h-[30px] bg-light-blue-400 rounded-full flex items-center justify-center ">
+                      <img
+                        src="https://uploads-ssl.webflow.com/6164810a3ab3b97d3562415c/6176c2e2efd5a412087e5909_5fc2d6c4e509f31bddd6ec13_5fb410854861edca9a030b2e_Group%209%201%202.svg"
+                        loading="lazy"
+                        width="10"
+                        alt="instagram icon"
+                        className="footer-social-icon"
+                      />
+                    </a>
+                    <a className="w-[30px] cursor-pointer mr-[10px] h-[30px] bg-light-blue-400 rounded-full flex items-center justify-center ">
+                      <img
+                        src="https://uploads-ssl.webflow.com/6164810a3ab3b97d3562415c/6176c2e2ac02e5fe28067cf8_5fc2d6c451c3f8eaf374fb3b_5fb410854861ed692b030b2d_Group%2010%201%202.svg"
+                        loading="lazy"
+                        width="10"
+                        alt="twitter icon"
+                        className="footer-social-icon"
+                      />
+                    </a>
+                    <a className="w-[30px] cursor-pointer mr-[10px] h-[30px] bg-light-blue-400 rounded-full flex items-center justify-center ">
+                      <img
+                        src="https://uploads-ssl.webflow.com/6164810a3ab3b97d3562415c/6176c2e2889da55ce4e33446__x31_0.Linkedin.svg"
+                        loading="lazy"
+                        width="10"
+                        alt="linked in icon"
+                        className="footer-social-icon"
+                      />
+                    </a>
+                    <a className="w-[30px] cursor-pointer mr-[10px] h-[30px] bg-light-blue-400 rounded-full flex items-center justify-center ">
+                      <img
+                        src="https://uploads-ssl.webflow.com/6164810a3ab3b97d3562415c/6176c2e28bb61b04375b123c_Vector.svg"
+                        loading="lazy"
+                        width="10"
+                        alt="youtube icon"
+                        className="footer-social-icon"
+                      />
+                    </a>
+                    <a className="w-[30px] cursor-pointer mr-[10px] h-[30px] bg-light-blue-400 rounded-full flex items-center justify-center ">
+                      <img
+                        src="https://uploads-ssl.webflow.com/6164810a3ab3b97d3562415c/6176c2e24c8bee58457fb3c5_Group.svg"
+                        loading="lazy"
+                        width="10"
+                        alt="whatsapp icon"
+                        className="footer-social-icon"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="text-white">
+                  <div className=" border-b-[1px] border-opacity-20 border-white my-[10px] pb-[10px]">
+                    Compañía
+                  </div>
+
+                  <div className="mb-[10px]"> Sobre nosotros</div>
+                  <div className="mb-[10px]"> Blog</div>
+                </div>
+                <div className="text-white ">
+                  <div className="my-[10px]  pb-[10px] border-b-[1px] border-opacity-20 border-white">
+                    Apoyo
+                  </div>
+                  <div className="mb-[10px]"> Preguntas Frecuentes</div>
+                  <div className="mb-[10px]"> Contáctenos</div>
+                  <div className="mb-[10px]"> Términos y Condiciones</div>
+                  <div className="mb-[10px]"> Política de Privacidad</div>
+                </div>
+                <div className="text-white">
+                  <div className="my-[10px] pb-[10px] border-b-[1px] border-opacity-20 border-white">
+                    Servicios Principales
+                  </div>
+                  <div className="mb-[10px]"> Iniciar Negocio</div>
+                  <div className="mb-[10px]"> Impuesto sobre la renta</div>
+                  <div className="mb-[10px]"> Impuesto de venta</div>
+                </div>
+              </div>
+              {/* <img src={footer1} alt="" /> */}
             </div>
           </div>
         </div>
